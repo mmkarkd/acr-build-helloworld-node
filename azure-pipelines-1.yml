@@ -1,17 +1,7 @@
-trigger:
-  - main
-
-  - pool:
-    vmImage: 'Ubuntu-16.04'
-
-  - steps:
-  - task: Maven@3
-    inputs:
-      mavenPomFile: 'pom.xml'
-      mavenOptions: '-Xmx3072m'
-      javaHomeOption: 'JDKVersion'
-      jdkVersionOption: '1.8'
-      jdkArchitectureOption: 'x64'
-      publishJUnitResults: false
-      testResultsFiles: '**/surefire-reports/TEST-*.xml'
-      goals: 'package'
+# Node.js tool installer
+# Finds or downloads and caches the specified version spec of Node.js and adds it to the PATH
+- task: NodeTool@0
+  inputs:
+    #versionSpec: '6.x' 
+    #force32bit: false # Optional
+    #checkLatest: false # Optional
